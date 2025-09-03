@@ -1,0 +1,57 @@
+<h1>Your Cart</h1>
+
+<% if (cart.products.length === 0) { %>
+  <div class="empty-cart">
+    <p>Your cart is empty.</p>
+    <a href="/products" class="continue-btn">Shop Products</a>
+    
+  </div>
+<% } else { %>
+
+  <table class="cart-table">
+    <thead>
+      <tr>
+        <th>Product</th>
+        <th>Price</th>
+        <th>Quantity</th>
+        <th>Total</th>
+        <th>Actions</th>
+      </tr>
+    </thead>
+    <tbody>
+      <% let grandTotal = 0; %>
+      <% cart.products.forEach(item => { 
+           const total = item.productId.price * item.quantity;
+           grandTotal += total;
+      %>
+        <tr>
+          <td>
+            <img src="<%= item.productId.image %>" alt="<%= item.productId.name %>" class="cart-product-img">
+            <p><%= item.productId.name %></p>
+          </td>
+          <td>$<%= item.productId.price.toFixed(2) %></td>
+          <td><%= item.quantity %></td>
+          <td>$<%= total.toFixed(2) %></td>
+          <td>
+            <form action="/cart/increase/<%= item.productId._id %>" method="POST" style="display:inline;">
+              <button type="submit" class="qty-btn">+</button>
+            </form>
+            <form action="/cart/decrease/<%= item.productId._id %>" method="POST" style="display:inline;">
+              <button type="submit" class="qty-btn">-</button>
+            </form>
+            <form action="/cart/remove/<%= item.productId._id %>" method="POST" style="display:inline;">
+              <button type="submit" class="btn-remove">Remove</button>
+            </form>
+          </td>
+        </tr>
+      <% }) %>
+      <tr>
+        <td colspan="3" class="grand-total">Grand Total</td>
+        <td colspan="2" class="grand-total">$<%= grandTotal.toFixed(2) %></td>
+      </tr>
+    </tbody>
+  </table>
+
+  <a href="/products" class="continue-btn">Continue Shopping</a>
+
+<% } %>

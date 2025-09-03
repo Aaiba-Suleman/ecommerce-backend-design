@@ -1,0 +1,29 @@
+<link rel="stylesheet" href="/css/shop.css">
+
+<h1 class="page-title">All Products</h1>
+
+<section class="products-section">
+  <div class="grid">
+    <% products.forEach(product => { %>
+      <div class="card">
+        <!-- Image container ensures consistent size -->
+        <div class="img-container">
+          <img 
+            src="<%= product.image && product.image.trim() !== '' ? product.image : 'https://via.placeholder.com/300x200?text=No+Image' %>" 
+            alt="<%= product.name || 'Unnamed Product' %>" 
+          />
+        </div>
+
+        <!-- Product Info -->
+        <h3><%= product.name || 'Unnamed Product' %></h3>
+        <p class="product-description"><%= product.description || 'No description available.' %></p>
+        <p class="product-price"><strong>$<%= product.price || '0.00' %></strong></p>
+
+        <!-- Add to Cart -->
+        <form method="POST" action="/cart/add/<%= product._id %>">
+          <button type="submit" class="btn-add">Add to Cart</button>
+        </form>
+      </div>
+    <% }) %>
+  </div>
+</section>

@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title><%= typeof title !== "undefined" ? title : "My Shop" %></title>
+  <link rel="stylesheet" href="/css/styles.css">
+</head>
+<body>
+
+  <!-- Header -->
+<header class="header">
+  <div class="left-section">
+    <button class="openbtn" onclick="openNav()">☰</button>
+    <h1 class="site-title">E-Shop</h1>
+  </div>
+  <nav class="nav-links">
+    <a href="/">Home</a>
+    <a href="/products">Products</a>
+
+    <% if (!user) { %>
+      <a href="/login">Login</a>
+      <a href="/signup">Sign Up</a>
+    <% } else { %>
+      <a href="/cart">Your Cart (<%= cartCount %>)</a>
+      <a href="/logout">Logout</a>
+    <% } %>
+  </nav>
+</header>
+
+
+
+  <!-- Sidebar -->
+  <div id="mySidebar" class="sidebar">
+    <span class="closebtn" onclick="closeNav()">&times;</span>
+    <a href="/">Home</a>
+    <a href="/products">Products</a>
+    <a href="/login">Login</a>
+    <a href="/signup">Sign Up</a>
+    <a href="/cart">Your Cart</a>
+    <a href="/logout">Logout</a>
+  </div>
+
+  <!-- Page Content -->
+  <main class="content">
+        <%- body %>  <!-- express-ejs-layouts injects page content here -->
+  </main>
+
+  <!-- Footer -->
+  <footer>
+    <p>&copy; <%= new Date().getFullYear() %> E-Shop. All Rights Reserved.</p>
+  </footer>
+
+<script>
+  function openNav() {
+    document.getElementById("mySidebar").style.width = "250px";
+  }
+
+  function closeNavq() {
+    document.getElementById("mySidebar").style.width = "0";
+  }
+</script>
+</body>
+</html>

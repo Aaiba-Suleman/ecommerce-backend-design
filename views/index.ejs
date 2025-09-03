@@ -1,0 +1,25 @@
+<section class="hero">
+  <div class="hero-content">
+    <h1>Shop the Latest Trends</h1>
+    <p>Discover amazing deals and stylish products curated for you.</p>
+    <a href="/shop" class="btn-primary">Shop Now</a>
+  </div>
+</section>
+
+<section class="featured">
+  <h2>Featured Products</h2>
+  <div class="grid">
+    <% products.forEach(product => { %>
+      <div class="card">
+        <div class="img-container">
+          <img src="<%= product.image %>" alt="<%= product.name %>" />
+        </div>
+        <h3><%= product.name %></h3>
+        <p>$<%= product.price %></p>
+        <form method="POST" action="/cart/add/<%= product._id %>">
+          <button type="submit" class="btn-add">Add to Cart</button>
+        </form>
+      </div>
+    <% }) %>
+  </div>
+</section>

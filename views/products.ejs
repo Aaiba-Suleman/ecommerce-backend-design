@@ -1,0 +1,26 @@
+<h1>All Products</h1>
+
+<div class="product-list">
+  <% products.forEach(product => { %>
+    <div class="product-card">
+      <img src="<%= product.image %>" alt="<%= product.name %>">
+      <h3><%= product.name %></h3>
+      <p><%= product.description %></p>
+      <p>$<%= product.price.toFixed(2) %></p>
+      <form action="/cart/add/<%= product._id %>" method="POST">
+        <button type="submit">Add to Cart</button>
+      </form>
+    </div>
+  <% }) %>
+</div>
+<div class="pagination">
+  <% if (currentPage > 1) { %>
+    <a href="/products?page=<%= currentPage - 1 %>">Previous</a>
+  <% } %>
+
+  <span>Page <%= currentPage %> of <%= totalPages %></span>
+
+  <% if (currentPage < totalPages) { %>
+    <a href="/products?page=<%= currentPage + 1 %>">Next</a>
+  <% } %>
+</div>

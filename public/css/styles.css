@@ -1,0 +1,838 @@
+/* =========================
+   RESET + GLOBAL STYLES
+========================= */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html, body {
+  height: 100%;
+  font-family: "Segoe UI", Arial, sans-serif;
+  color: #333;
+  background: #fafafa;
+  display: flex;
+  flex-direction: column;
+  line-height: 1.6;
+}
+
+.container {
+  width: 90%;
+  max-width: 1200px;
+  margin: auto;
+}
+
+main {
+  flex: 1;
+  padding: 20px;
+  transition: margin-left 0.3s;
+}
+
+/* =========================
+   NAVBAR
+========================= */
+.navbar {
+  background: #111;
+  color: #fff;
+  padding: 1rem 0;
+}
+
+.nav-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.logo {
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: #fff;
+  text-decoration: none;
+}
+
+.nav-links {
+  list-style: none;
+  display: flex;
+  gap: 1.5rem;
+}
+
+.nav-links a {
+  color: #fff;
+  text-decoration: none;
+  transition: color 0.3s;
+}
+
+.nav-links a:hover {
+  color: #f39c12;
+}
+
+/* =========================
+   HERO
+========================= */
+.hero {
+  background: url("https://via.placeholder.com/1200x400") no-repeat center/cover;
+  height: 400px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: black;
+  text-align: center;
+}
+
+.hero-content h1 {
+  font-size: 3rem;
+  margin-bottom: 1rem;
+}
+
+.hero-content p {
+  font-size: 1.2rem;
+  margin-bottom: 1.5rem;
+}
+
+/* =========================
+   BUTTONS
+========================= */
+.btn-primary,
+.btn-secondary,
+.btn-add{
+  display: inline-block;
+  padding: 0.6rem 1.2rem;
+  border-radius: 6px;
+  text-decoration: none;
+  font-weight: bold;
+  transition: background 0.3s;
+}
+
+.btn-primary {
+  background: #f39c12;
+  color: #fff;
+}
+
+.btn-primary:hover {
+  background: #d35400;
+}
+
+.btn-secondary {
+  background: #fff;
+  color: #333;
+  border: 1px solid #ccc;
+}
+
+.btn-secondary:hover {
+  background: #f0f0f0;
+}
+.btn-add {
+  background-color: #f39c12;
+  color: white;
+  border: none;
+  width: 100%;
+}
+
+.btn-add:hover {
+  background-color: #d35400;
+}
+
+/* =========================
+   PRODUCT DETAIL
+========================= */
+.product-detail {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2rem;
+  margin: 2rem 0;
+}
+
+.product-detail img {
+  flex: 1 1 400px;
+  max-width: 400px;
+}
+
+.product-detail .details {
+  flex: 1 1 300px;
+}
+
+.product-detail .price {
+  color: #f39c12;
+  font-size: 1.5rem;
+  margin: 1rem 0;
+}
+
+/* =========================
+   AUTH FORMS (Login / Signup)
+========================= */
+.auth-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: -6%;
+  height: 85vh;
+}
+
+.auth-card {
+  background: #fff;
+  padding: 2.5rem 3rem;
+  border-radius: 12px;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+  width: 100%;
+  max-width: 450px; /* Bigger */
+  text-align: center;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.auth-card:hover {
+  transform: scale(1.02);
+  box-shadow: 0 6px 18px rgba(0,0,0,0.25);
+}
+
+.auth-card h1 {
+  margin-bottom: 1.5rem;
+  color: #111;
+}
+
+.auth-card input {
+  width: 100%;
+  padding: 0.9rem;
+  margin-bottom: 1rem;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+  font-size: 1rem;
+}
+
+.auth-card .btn-primary {
+  width: 100%;
+  padding: 0.9rem;
+  font-size: 1rem;
+  border-radius: 6px;
+}
+
+.error-msg {
+  color: #e63946;
+  margin-bottom: 1rem;
+}
+
+.switch-auth {
+  margin-top: 1rem;
+  font-size: 0.9rem;
+}
+
+.switch-auth a {
+  color: #f39c12;
+  text-decoration: none;
+}
+
+.switch-auth a:hover {
+  text-decoration: underline;
+}
+
+/* =========================
+   ERROR PAGES
+========================= */
+.error-page {
+  text-align: center;
+  margin: 100px auto;
+  padding: 20px;
+}
+
+.error-page h1 {
+  font-size: 3rem;
+  color: #e63946;
+}
+
+.error-page p {
+  font-size: 1.2rem;
+  margin: 15px 0;
+}
+
+.error-page .btn-primary {
+  display: inline-block;
+  padding: 10px 20px;
+  background: #457b9d;
+  color: white;
+  text-decoration: none;
+  border-radius: 5px;
+  transition: 0.3s;
+}
+
+.error-page .btn-primary:hover {
+  background: #1d3557;
+}
+
+/* =========================
+   DASHBOARD
+========================= */
+.dashboard-container {
+  text-align: center;
+  margin: 5rem 0;
+}
+
+.dashboard-actions {
+  margin-top: 2rem;
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+}
+
+.error-message {
+  color: #e63946;
+  margin-bottom: 1rem;
+  font-weight: bold;
+  text-align: center;
+}
+/* =========================
+   FEATURED PRODUCTS SECTION
+========================= */
+.featured {
+  text-align: center;   /* centers the title + grid */
+  margin: 3rem 0;       /* spacing above and below */
+}
+
+.featured h2 {
+  font-size: 2rem;
+  font-weight: bold;
+  color: #000;          /* make the title black */
+  margin-bottom: 1.5rem;
+}
+
+.featured .grid {
+  justify-content: center; /* centers the product cards */
+}
+
+/* =========================
+   SIDEBAR
+========================= */
+.sidebar {
+  height: 100%;
+  width: 0;
+  position: fixed;
+  top: 0;
+  left: 0;
+  background-color: #111;
+  overflow-x: hidden;
+  transition: 0.3s;
+  padding-top: 60px;
+  z-index: 1000;
+}
+
+.sidebar a {
+  padding: 12px 20px;
+  text-decoration: none;
+  font-size: 18px;
+  color: #fff;
+  display: block;
+  transition: background 0.2s;
+}
+
+.sidebar a:hover {
+  background: #575757;
+}
+
+.sidebar .closebtn {
+  position: absolute;
+  top: 15px;
+  right: 20px;
+  font-size: 30px;
+  color: #fff;
+  cursor: pointer;
+}
+
+/* Sidebar Open Button (☰ only) */
+.openbtn {
+  font-size: 28px;
+  cursor: pointer;
+  background-color: #111;
+  color: white;
+  padding: 8px 12px;
+  border: none;
+  position: fixed;
+  top: 15px;
+  left: 15px;
+  z-index: 1001;
+  border-radius: 5px;
+  transition: background 0.3s ease;
+}
+
+.openbtn:hover {
+  background: #222;
+}
+
+/* =========================
+   FOOTER
+========================= */
+.footer {
+  background: #111;
+  color: #fff;
+  padding: 1rem;
+  text-align: center;
+  margin-top: auto;
+}
+
+/* =========================
+   RESPONSIVE
+========================= */
+@media (max-width: 768px) {
+  .hero-content h1 {
+    font-size: 2rem;
+  }
+
+  .product-detail {
+    flex-direction: column;
+    align-items: center;
+  }
+}
+/* Header */
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: #222;
+  color: white;
+  padding: 15px 20px;   /* more padding = thicker header */
+  position: sticky;
+  top: 0;
+  height: 70px;         /* fixed height so hover won't affect below content */
+  z-index: 1002;
+}
+.header h1 {
+  margin-left: 80px; /* shifts only the text, keeps background full */
+}
+
+
+.left-section {
+  display: flex;
+  align-items: center;
+}
+
+.site-title {
+  margin: 0 0 0 12px;
+  font-size: 22px;
+  font-weight: bold;
+  color: white;
+}
+
+/* Sidebar */
+.sidebar {
+  height: 100%;
+  width: 0; /* start closed */
+  position: fixed;
+  top: 0;
+  left: 0;
+  background-color: #333; /* dark background */
+  overflow-x: hidden;
+  transition: 0.3s;
+  padding-top: 60px;
+  z-index: 1100;
+}
+
+/* Sidebar links */
+.sidebar a {
+  padding: 10px 20px;
+  text-decoration: none;
+  font-size: 18px;
+  color: #fff; /* white so it shows on dark bg */
+  display: block;
+  transition: 0.2s;
+}
+
+.sidebar a:hover {
+  background-color:#575757;
+}
+
+
+/* Nav Links */
+.nav-links a {
+  color: white;
+  text-decoration: none;
+  margin-left: 20px;
+  font-size: 17px;
+  line-height: 70px;  /* vertically aligns links in the thicker header */
+}
+
+.nav-links a:hover {
+  color: #ddd;
+}
+.openbtn {
+  font-size: 22px;
+  background: none;
+  border: none;
+  color: white;
+  cursor: pointer;
+  margin-right: 15px;
+
+  position: relative;
+  top: -1px;   /* move the icon up, adjust value as needed */
+}
+/* Ensure page takes full height */
+html, body {
+  height: 100%;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Main content expands to push footer down */
+main.content {
+  flex: 1;
+}
+
+/* Footer styling */
+footer {
+  background: #222;
+  color: white;
+  text-align: center;
+  padding: 8px;
+  margin-top: auto;   /* pushes footer to bottom if content is short */
+}
+/* =========================
+   AUTH PROMPT PAGE
+========================= */
+.auth-prompt-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 85vh;
+}
+
+.auth-prompt-card {
+  background: #fff;
+  padding: 2.5rem 3rem;
+  border-radius: 12px;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+  text-align: center;
+  width: 100%;
+  max-width: 450px;
+}
+
+.auth-prompt-card h1 {
+  margin-bottom: 1rem;
+  color: #111;
+}
+
+.auth-prompt-card p {
+  margin-bottom: 2rem;
+  font-size: 1.1rem;
+}
+
+.auth-buttons {
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+}
+
+.auth-buttons a {
+  flex: 1;
+  padding: 0.9rem 0;
+  border-radius: 6px;
+  font-weight: bold;
+  text-decoration: none;
+  font-size: 1rem;
+  text-align: center;
+  transition: background 0.3s;
+}
+
+/* Button colors */
+.btn-login {
+  background: #f39c12; /* Orange */
+  color: #fff;
+}
+
+.btn-login:hover {
+  background: #d35400;
+}
+
+.btn-signup {
+  background: #3498db; /* Blue */
+  color: #fff;
+}
+
+.btn-signup:hover {
+  background: #2980b9;
+}
+
+/* Mobile responsiveness */
+@media (max-width: 500px) {
+  .auth-buttons {
+    flex-direction: column;
+  }
+}
+.auth-prompt-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 80vh;
+}
+
+.auth-prompt-card {
+  background: #fff;
+  padding: 2rem 3rem;
+  border-radius: 12px;
+  text-align: center;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+}
+
+.auth-prompt-card h1 {
+  margin-bottom: 1rem;
+}
+
+.auth-prompt-card p {
+  margin-bottom: 1.5rem;
+}
+
+.auth-buttons a {
+  display: inline-block;
+  padding: 10px 20px;
+  margin: 0 10px;
+  border-radius: 6px;
+  text-decoration: none;
+  font-weight: bold;
+  color: white;
+}
+
+.btn-login {
+  background-color: #3498db; /* blue */
+}
+
+.btn-signup {
+  background-color: #f39c12; /* orange */
+}
+/* =========================
+   CART STYLING
+========================= */
+.cart-container {
+  width: 90%;
+  max-width: 1000px;
+  margin: 50px auto;
+}
+
+.cart-container h1 {
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+.cart-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-bottom: 20px;
+}
+
+.cart-table th,
+.cart-table td {
+  text-align: center;
+  padding: 12px 10px;
+  border-bottom: 1px solid #ddd;
+  vertical-align: middle;
+}
+
+.cart-table th {
+  background-color: #f5f5f5;
+  font-weight: 600;
+}
+
+.cart-product-img {
+  width: 100px;
+  height: 100px;
+  object-fit: cover;
+  border-radius: 8px;
+  display: block;
+  margin: 0 auto 5px;
+}
+
+.cart-table td p {
+  margin: 0;
+  font-size: 0.95rem;
+}
+
+.qty-btn {
+  padding: 5px 10px;
+  font-size: 16px;
+  border: 1px solid #ccc;
+  background: #fff;
+  cursor: pointer;
+  border-radius: 5px;
+  transition: background 0.3s;
+}
+
+.qty-btn:hover {
+  background: #f0f0f0;
+}
+
+.btn-remove {
+  padding: 5px 10px;
+  background: #e74c3c;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+.btn-remove:hover {
+  background: #c0392b;
+}
+
+.grand-total {
+  font-weight: bold;
+  font-size: 1.1rem;
+  text-align: right;
+  padding-right: 20px;
+}
+
+.continue-btn {
+  padding: 10px 20px;
+  font-size: 1rem;
+  cursor: pointer;
+  background: #3498db;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  transition: background 0.3s;
+}
+
+.empty-cart {
+  text-align: center;   /* centers text and button inside */
+  margin-top: 40px;     /* push whole box down */
+}
+
+.empty-cart p {
+  font-size: 18px;      /* make text a bit bigger */
+  margin-bottom: 20px;  /* creates space before button */
+}
+
+.empty-cart p {
+  color: #555;          /* grey text */
+  font-weight: bold;    /* make it bold */
+}
+
+/* Move button down */
+.empty-cart .continue-btn {
+  display: inline-block;   /* keep it like a button */
+  margin-top: 20px;        /* adjust this value as needed */
+}
+
+
+.continue-btn:hover {
+  background: #2980b9;
+}
+
+/* Ensure all cards have the same height */
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 1.5rem;
+  align-items: stretch; /* all cards same height */
+}
+/* =========================
+   GRID + CARDS
+========================= */
+
+/* =========================
+   SHOP PAGE (Product Grid + Cards)
+========================= */
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 1.5rem;
+  align-items: stretch;
+}
+
+.card {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  background: #fff;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  padding: 1rem;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+  height: 100%;  /* makes all cards stretch equally */
+}
+
+.card h3,
+.card p,
+.card form {
+  margin: 0.5rem 0;
+}
+
+
+.img-container {
+  width: 100%;
+  height: 250px;
+  overflow: hidden;
+  border-radius: 6px;
+  background: #f5f5f5;
+}
+
+.img-container img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.product-description {
+  flex-grow: 1;
+  margin: 0.5rem 0;
+  color: #555;
+}
+
+.product-price {
+  color: #f39c12;
+  font-size: 1.2rem;
+  margin: 0.5rem 0;
+}
+
+.logo a {
+  text-decoration: none;   /* remove underline */
+  color: #333;             /* set logo color */
+  font-size: 24px;
+  font-weight: bold;
+}
+
+.logo a:hover {
+  color: #ff6600;          /* change color when hovering */
+}
+.pagination {
+  text-align: center;
+  margin: 20px 0;
+}
+
+.page-btn {
+  display: inline-block;
+  margin: 0 5px;
+  padding: 8px 14px;
+  text-decoration: none;
+  background: #f5f5f5;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  color: #333;
+  font-weight: bold;
+}
+
+.page-btn:hover {
+  background: #ff6600;
+  color: #fff;
+}
+
+.page-btn.active {
+  background: #ff6600;
+  color: #fff;
+  border-color: #ff6600;
+}
+header .nav-links {
+  display: flex;
+  gap: 15px;        /* spacing between links */
+  align-items: center;
+}
+
+header .nav-links a {
+  color: #ffffff;   /* default white color */
+  font-weight: 500;
+  padding: 5px 10px;
+  text-decoration: none; /* remove underline if any */
+  transition: color 0.3s; /* smooth hover transition */
+}
+
+header .nav-links a:hover {
+  color: #00bfff;  /* visible hover color, e.g., sky blue */
+}
