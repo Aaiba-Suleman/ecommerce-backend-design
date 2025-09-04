@@ -5,6 +5,7 @@ const path = require("path");
 const bodyParser = require("body-parser");
 const expressLayouts = require("express-ejs-layouts");
 const session = require("express-session");
+
 const app = express();
 
 // Middleware
@@ -16,19 +17,24 @@ app.use(expressLayouts);
 app.set("view engine", "ejs");
 app.set("views", path.join(__dirname, "views"));
 
-// --- Session (must be BEFORE routes) ---
-app.use(session({
-  secret: "your-secret-key",
-  resave: false,
-  saveUninitialized: true,
-}));
-
+// --- Session (using env secret for Render) ---
+app.use(
+  session({
+    secret: process.env.SESSION_SECRET || "default-secret",
+    resave: false,
+    saveUninitialized: true,
+  })
+);
 
 // MongoDB Connection
-mongoose.connect(process.env.MONGO_URI, {
-  useNewUrlParser: true,
-  useUnifiedTopology: true,
-});
+mongoose
+  .connect(process.env.MONGO_URI, {
+    useNewUrlParser: true,
+    useUnifiedTopology: true,
+  })
+  .then(() => console.log("✅ Connected to MongoDB"))
+  .catch((err) => console.error("❌ MongoDB connection error:", err));
+
 
 
 // User Schema
@@ -81,6 +87,8 @@ app.use(async (req, res, next) => {
 
 // Seed Products (Run once safely)
 async function seedProducts() {
+  const count = await Product.countDocuments();
+  if (count === 0){
   const products = [
      {
         name: "Camera",
@@ -228,9 +236,9 @@ async function seedProducts() {
       },
   ];
 
-  await Product.deleteMany({}); // clear old products
   await Product.insertMany(products);
   console.log("✅ Products seeded correctly!");
+  }
 }
 seedProducts();
 
